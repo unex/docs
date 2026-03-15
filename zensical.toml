@@ -1,0 +1,55 @@
+[project]
+site_name = "Unexceptional Docs"
+nav = [
+  { Home = "index.md" },
+]
+repo_url = "https://github.com/unex/docs"
+
+[project.theme]
+variant = "classic"
+custom_dir = "overrides"
+features = [
+  "navigation.instant",
+  "navigation.instant.progress",
+  "content.action.edit", # Edit this page
+  "content.action.view",  # View source of this page
+]
+
+[project.theme.icon]
+logo = "material/hexagon-slice-2"
+edit = "material/pencil"
+view = "material/eye"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle = { icon = "lucide/sun-moon", name = "Switch to light mode" }
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "pink"
+accent = "cyan"
+toggle = { icon = "lucide/sun", name = "Switch to dark mode" }
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "pink"
+accent = "cyan"
+toggle = { icon = "lucide/moon", name = "Switch to system preference" }
+
+[project.markdown_extensions.admonition]
+
+[project.markdown_extensions.attr_list]
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+
+[project.markdown_extensions.pymdownx.superfences]
+
+[project.markdown_extensions.toc]
+permalink = true
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/unex/docs"
