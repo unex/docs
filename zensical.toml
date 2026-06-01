@@ -2,6 +2,9 @@
 site_name = "Unexceptional Docs"
 nav = [
   { Home = "index.md" },
+  { Ubiquiti = [
+    { "UniFi Switch Recovery" = "unifi_recovery.md" },
+  ]},
 ]
 repo_url = "https://github.com/unex/docs"
 
@@ -46,6 +49,8 @@ toggle = { icon = "lucide/moon", name = "Switch to system preference" }
 anchor_linenums = true
 
 [project.markdown_extensions.pymdownx.superfences]
+
+[project.markdown_extensions.pymdownx.magiclink]
 
 [project.markdown_extensions.toc]
 permalink = true
