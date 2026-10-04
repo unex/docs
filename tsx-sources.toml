@@ -1,0 +1,75 @@
+# Sources of the TSX docs. The script tools/pull-tsx-docs.py reads this file.
+# The script writes all pages under docs/crestron/tsx/. The folders in [site]
+# and the "to" paths in [[place]] are relative to that folder.
+#
+# [site]
+# base    Folder of the tsx-mainline section. It holds the hand-written pages
+#         and one target folder for each repo. The nav calls the section by
+#         the folder name.
+# groups  Folders for placed files, with their nav titles. In the nav, the
+#         groups come before the base section.
+#
+# [[source]]
+# repo    Name of the repo in the tsx-mainline organization.
+# ref     Branch or tag to pull. The default is the value in [defaults].
+# paths   Folders and files to copy. A folder copies its contents to the target.
+#         A README.md at the repo root becomes index.md, or readme.md if the
+#         target already has an index.md.
+# target  Folder in the base folder.
+# title   Section title in the nav.
+# order   Optional. Page names without the .md suffix, in nav order. The index
+#         page comes first. A page that is not in the list follows the listed
+#         pages, in alphabetical order. The nav title of a page is the first
+#         "#" heading of the page. The index page of a section with more than
+#         one page is called Overview.
+#
+# [[place]]
+# One file of a repo that goes to a different folder. Add one entry for each
+# file. The script uses the ref of the [[source]] of the repo.
+# repo    Name of the repo. It needs a [[source]] entry.
+# file    Path of the file in the repo. The file goes to "to" and not to the
+#         target folder, also when "paths" includes it.
+# to      Path of the copy: a file name, a path in a group folder, or a file
+#         name in the base folder.
+# title   Optional. Nav title of the page. The default is the first "#"
+#         heading of the page.
+
+[defaults]
+ref = "main"
+
+[site]
+base = "tsx-mainline"
+groups = { hardware = "Hardware" }
+
+[[source]]
+repo = "tsx-xx60-linux"
+paths = ["docs/"]
+target = "tsx-xx60-linux"
+title = "tsx-xx60-linux"
+order = ["install", "ha", "boot", "kernel", "rootfs", "recovery"]
+
+[[source]]
+repo = "tsx-linux-common"
+paths = ["docs/"]
+target = "tsx-linux-common"
+title = "tsx-linux-common"
+order = ["adaptive-brightness", "layout"]
+
+[[source]]
+repo = "tsx-ledbar-fw"
+paths = ["docs/", "README.md"]
+target = "tsx-ledbar-fw"
+title = "tsx-ledbar-fw"
+order = ["readme", "leds", "update-protocol"]
+
+[[source]]
+repo = "tsx-aports"
+paths = ["README.md"]
+target = "tsx-aports"
+title = "tsx-aports"
+
+[[place]]
+repo = "tsx-xx60-linux"
+file = "docs/hardware.md"
+to = "hardware/xx60.md"
+title = "xx60 Series"

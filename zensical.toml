@@ -5,6 +5,8 @@ nav = [
   { Ubiquiti = [
     { "UniFi Switch Recovery" = "unifi_recovery.md" },
   ]},
+  # tsx-nav:begin (written by tools/pull-tsx-docs.py)
+  # tsx-nav:end
 ]
 repo_url = "https://github.com/unex/docs"
 
